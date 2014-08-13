@@ -8,6 +8,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello Edgar!!</h1>
+        <h1><center>Hello Edgar</center></h1>
+        <h1><center>Morales Gomez!!</center></h1>
     </body>
 </html>
