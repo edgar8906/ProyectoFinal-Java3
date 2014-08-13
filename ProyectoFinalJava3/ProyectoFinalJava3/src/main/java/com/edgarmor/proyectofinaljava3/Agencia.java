@@ -31,7 +31,7 @@ public class Agencia implements Serializable{
     private Integer idAgencia;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 50)
+    @Size(max = 50)
     @Column(name = "nomAgencia")
     private String nomAgencia;
 

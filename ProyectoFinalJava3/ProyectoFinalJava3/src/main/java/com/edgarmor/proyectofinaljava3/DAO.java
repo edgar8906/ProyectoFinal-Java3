@@ -1,10 +1,8 @@
 package com.edgarmor.proyectofinaljava3;
-
 /**
  *
  * @author edgar
  */
-
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

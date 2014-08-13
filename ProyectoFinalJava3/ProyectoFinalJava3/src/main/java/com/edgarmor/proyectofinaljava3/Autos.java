@@ -30,7 +30,7 @@ public class Autos implements Serializable{
     private Integer idAuto;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 50)
+    @Size(max = 50)
     @Column(name = "nomAuto")
     private String nomAuto;
     @Basic(optional = false)
