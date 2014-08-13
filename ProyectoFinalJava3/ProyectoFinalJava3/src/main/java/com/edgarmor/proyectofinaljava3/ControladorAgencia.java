@@ -19,7 +19,7 @@ public class ControladorAgencia {
     public @ResponseBody String insertar(@PathVariable String agenciaas){
         
         DAOAgenciaImpl.insertar(new Agencia(agenciaas));
-        return "La nueva agencia se agrego correctamente";
+        return "La agencia se agrego correctamente";
     }
     
     @RequestMapping(value = "/agencia/{id}/{agenciaas}",method = RequestMethod.PUT, headers = {"Accept=text/html"})

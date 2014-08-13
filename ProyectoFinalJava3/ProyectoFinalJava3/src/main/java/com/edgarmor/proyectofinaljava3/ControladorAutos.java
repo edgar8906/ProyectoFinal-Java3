@@ -21,7 +21,7 @@ public class ControladorAutos {
         
         try {
             DAOAutosImpl.insertar(new Autos(auto, costo, new Agencia(idAgencia), new Proveedores(idProv)));
-            return "El registro se ha insertado correctamente";
+            return "El registro se inserto correctamente";
         } catch (Exception e) {
             return "no existe";
         }
@@ -34,7 +34,7 @@ public class ControladorAutos {
         
         try {
             DAOAutosImpl.actualizar(new Autos(id, auto, costo, new Agencia(idAgencia), new Proveedores(idProv)));
-            return "El registro se ha actualizado correctamente";
+            return "El registro se actualizo correctamente";
         } catch (Exception e) {
             return "Error al actualizar el registro";
         }
@@ -45,9 +45,9 @@ public class ControladorAutos {
         
         try {
             DAOAutosImpl.borrar(new Autos(id,auto));
-            return "El registro se ha eliminado";
+            return "El registro se elimino";
         } catch (Exception e) {
-            return "Error al borrar el registro";
+            return "Error al borrar registro";
         }
     }
     
