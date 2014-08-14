@@ -6,5 +6,8 @@
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
+    <mapping class="com.edgarmor.proyectofinaljava3.Agencia"/>
+    <mapping class="com.edgarmor.proyectofinaljava3.Autos"/>
+    <mapping class="com.edgarmor.proyectofinaljava3.Proveedores"/>
   </session-factory>
 </hibernate-configuration>

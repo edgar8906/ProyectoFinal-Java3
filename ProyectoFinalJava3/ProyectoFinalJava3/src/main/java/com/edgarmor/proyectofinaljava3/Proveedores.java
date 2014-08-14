@@ -13,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -20,7 +21,22 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "Proveedores")
-public class Proveedores implements Serializable{
+@Entity
+@Table(name = "proveedores")
+@NamedQueries({
+    @NamedQuery(name = "Proveedores.findAll", query = "SELECT p FROM Proveedores p")})
+public class Proveedores implements Serializable, Serializable{
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "idProv")
+    private Integer idProv;
+    @Size(max = 50)
+    @Column(name = "nomProv")
+    private String nomProv;
+    @OneToMany(mappedBy = "idProv")
+    private Collection<Autos> autosCollection;
     
     private static final long serialVersionUID = 1L;
     @Id
@@ -65,6 +81,59 @@ public class Proveedores implements Serializable{
 
     public void setNomProv(String nomProv) {
         this.nomProv = nomProv;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (idProv != null ? idProv.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Proveedores)) {
+            return false;
+        }
+        Proveedores other = (Proveedores) object;
+        if ((this.idProv == null && other.idProv != null) || (this.idProv != null && !this.idProv.equals(other.idProv))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "com.edgarmor.proyectofinaljava3.Proveedores[ idProv=" + idProv + " ]";
+    }
+
+    public Proveedores(Integer idProv) {
+        this.idProv = idProv;
+    }
+
+    public Integer getIdProv() {
+        return idProv;
+    }
+
+    public void setIdProv(Integer idProv) {
+        this.idProv = idProv;
+    }
+
+    public String getNomProv() {
+        return nomProv;
+    }
+
+    public void setNomProv(String nomProv) {
+        this.nomProv = nomProv;
+    }
+
+    public Collection<Autos> getAutosCollection() {
+        return autosCollection;
+    }
+
+    public void setAutosCollection(Collection<Autos> autosCollection) {
+        this.autosCollection = autosCollection;
     }
 
     @Override
